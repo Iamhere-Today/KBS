@@ -4,14 +4,14 @@ body{ /* achtergrond */
 h1 { /* voor h1 */
     color: #5DD6F5;
     text-align: center;
-    font-family: header;
+    font-family: header,serif;
 }
 @font-face { /* Font header */
-    font-family: 'header';
+    font-family: header;
     src: url("font/DelaGothicOne-Regular.ttf");
 }
 @font-face { /* Font body */
-    font-family: 'body';
+    font-family: body;
     src: url("font/Rambla-Regular.ttf");
 }
 .balky {
@@ -20,12 +20,12 @@ h1 { /* voor h1 */
     padding: 0;
     overflow: hidden;
     background-color: #3e60fc;
-    font-family: body;
+    font-family: body,sans-serif;
 }
 
 .balk {
     float: left;
-    display: round;
+    display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -33,7 +33,7 @@ h1 { /* voor h1 */
 }
 .balk1 {
     float: right;
-    display: round;
+    display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -46,4 +46,10 @@ li a:hover:not(.active) {
 
 .active {
     background-color: #517EF5;
+}
+
+.signup {
+    color: aqua;
+    text-align: center;
+
 }
