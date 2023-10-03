@@ -1,0 +1,49 @@
+body{ /* achtergrond */
+    background-color: #20242c;
+}
+h1 { /* voor h1 */
+    color: #5DD6F5;
+    text-align: center;
+    font-family: header;
+}
+@font-face { /* Font header */
+    font-family: 'header';
+    src: url("font/DelaGothicOne-Regular.ttf");
+}
+@font-face { /* Font body */
+    font-family: 'body';
+    src: url("font/Rambla-Regular.ttf");
+}
+.balky {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3e60fc;
+    font-family: body;
+}
+
+.balk {
+    float: left;
+    display: round;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.balk1 {
+    float: right;
+    display: round;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #4EB5CF;
+}
+
+.active {
+    background-color: #517EF5;
+}
