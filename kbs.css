@@ -19,7 +19,7 @@ h1 { /* voor h1 */
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #3e60fc;
+    background-color: #1303a1;
     font-family: body,sans-serif;
 }
 
@@ -28,7 +28,7 @@ h1 { /* voor h1 */
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 28px 16px;
     text-decoration: none;
 }
 .balk1 {
@@ -36,8 +36,17 @@ h1 { /* voor h1 */
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 26px 16px;
     text-decoration: none;
+}
+.balk_midden {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 26px 16px;
+    text-decoration: none;
+    border: #3e60fc;
 }
 
 li a:hover:not(.active) {
@@ -45,7 +54,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color: #517EF5;
+    background-color: #1502c2;
 }
 
 .signup {
