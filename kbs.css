@@ -72,19 +72,13 @@ li a:hover:not(.active) {
     text-align: center;
 
 }
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
-}
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
-}
 .button{
     color: #ffffff;
     background-color: #1303a1;
     border: none;
-    height: 35px;
-    width: 35px;
+    height:92px;
+    width:62px;
 }
 
 #myInput {
@@ -106,9 +100,10 @@ li a:hover:not(.active) {
 .dropdown {
     position: absolute;
     left: 10px;
-    bottom: 40px;
+    bottom: 0;
     display: inline-block;
 }
+
 
 .dropdown-content {
     display: none;
@@ -118,7 +113,7 @@ li a:hover:not(.active) {
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 2;
-    top: 178%; /* Adjust this value to control the vertical position */
+    top: 100%; /*178  Adjust this value to control the vertical position */
     left: -28%;
 }
 
@@ -129,7 +124,9 @@ li a:hover:not(.active) {
     display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.button:hover {
+    background-color: #4EB5CF;
+}
 
 .show {display: block;}
 
