@@ -1,26 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- gekozen taal voor de website is Engels -->
 <head>
-    <meta charset="UTF-8">
-    <title>KBS Groep 5</title>
-    <link rel="icon" type="img/x-icon" href="img/ND-logo2.ico">
-    <link rel="stylesheet" type="text/css" href="kbs.css">
+    <meta charset="UTF-8"> <!-- zorgt dat het alfabet geaccepteerd wordt -->
+    <title>Nerdy Gadgets</title> <!-- tab titel -->
+    <link rel="icon" type="img/x-icon" href="img/Nerdy_Gadgets_zonder_tekst.ico"> <!-- icon in je tab -->
+    <link rel="stylesheet" type="text/css" href="kbs.css"> <!-- koppelt de css aan de html code -->
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+    </script>
 </head>
 <body>
 <ul class="balky">
-    <!-- de lijst items. na de href is de pagina waar je heen gaat als je erop klikt.
-    de class geeft aan bij welke groep het hoort.-->
-    <li><a href="index.html" class="balk">
-        <img src="img/home.png" alt="home" style="width:30px;height:30px;"></a></li>
-    <li><a href="signup_kbs.html" class="balk1 active">
-        <img src="img/profile.png" alt="Sign In/Up" style="width:30px;height:30px;"></a></li>
-    <li><a href="contact.html" class="balk" style="height:35px;">Contact</a></li>
-    <li><a href="about.html" class="balk" style="height:35px;">About</a></li>x
-    <li><a href="shopcart.html" class="balk1">
-        <img src="img/cart.png" alt="Shopping Cart" style="width:35px;height:30px;"></a></li>
-    <li><a href="index.html" class="balk_midden">
-        <img src="img/Nerdy_Gadgets_zonder_tekst.png" alt="nerdy gadgets logo" style="width:80px;height:72px;"></a></li>
+    <li class="nav-item logo">
+        <a href="index.html" class="balk_midden">
+            <img src="img/Nerdy_Gadgets_zonder_tekst.png" alt="nerdy gadgets logo"
+                 style="width:85px;height:86px;"></a>
+    </li>
+    <li class="balk">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="balk button"><img src="img/Menu.png" style="height: 40px;" alt="menu"></button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </li>
 
+    <div class="nav-items-right"> <!-- Wrap both "Sign Up" and "Shop Cart" in the same div -->
+        <li class="nav-item"><a href="shopcart.html" class="balk1"> <img src="img/cart.png" alt="Shopping Cart"
+                                                                         style="width:35px;height:35px;"></a></li>
+        <li class="nav-item"><a href="signup_kbs.html" class="balk1"> <img src="img/profile.png" alt="Sign In/Up"
+                                                                           style="width:30px;height:35px;"></a></li>
+    </div>
 </ul>
 <h1>Nerdy Gadgets</h1>
 <div class="signup">
