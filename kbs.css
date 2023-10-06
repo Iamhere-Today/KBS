@@ -46,7 +46,7 @@ h1 { /* voor h1 */
     left: 47.5%;
     color: white;
     text-align: center;
-    padding: 0px 0px;
+    padding: 0 0;
     text-decoration: none;
     border: #3e60fc;
 }
