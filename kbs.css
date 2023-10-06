@@ -74,6 +74,13 @@ li a:hover:not(.active) {
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
 }
+.button{
+    color: #ffffff;
+    background-color: #1303a1;
+    border: none;
+    height: 35px;
+    width: 35px;
+}
 
 #myInput {
     box-sizing: border-box;
@@ -91,7 +98,7 @@ li a:hover:not(.active) {
 .dropdown {
     position: absolute;
     left: 10px;
-    bottom: 10px;
+    bottom: 40px;
     display: inline-block;
 }
 
