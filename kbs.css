@@ -18,9 +18,12 @@ h1 { /* voor h1 */
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space items evenly */
     background-color: #1303a1;
-    font-family: body,sans-serif;
+    font-family: body, sans-serif;
+    width: 100%;
+    position: relative; /* Add this for absolute positioning */
 }
 
 .balk {
@@ -63,4 +66,75 @@ li a:hover:not(.active) {
     color: aqua;
     text-align: center;
 
+}
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    box-sizing: border-box;
+    background-image: url('img/Magnifier.png'); /* dit moet ik nog ff fixen */
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 2;
+    top: 100%; /* Adjust this value to control the vertical position */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.dropdown-container {
+    position: absolute;
+    top: 100%;
+    left: -120px; /* Adjust this value to control the horizontal position */
+    width: 120px;
+    display: none; /* Hide it by default */
+    flex-direction: column; /* Stack dropdown items vertically */
+}
+
+.nav-item {
+    margin-left: 10px; /* Add some spacing between items */
+}
+
+.nav-items {
+    display: flex; /* Use flexbox for non-dropdown items */
+    align-items: center; /* Vertically center non-dropdown items */
+}
+
+.nav-items-right {
+    display: flex; /* Use flexbox for right items */
+    align-items: center; /* Vertically center right items */
 }
