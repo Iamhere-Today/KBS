@@ -89,7 +89,9 @@ li a:hover:not(.active) {
 #myInput:focus {outline: 3px solid #ddd;}
 
 .dropdown {
-    position: relative;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
     display: inline-block;
 }
 
