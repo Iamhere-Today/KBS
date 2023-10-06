@@ -43,7 +43,7 @@ h1 { /* voor h1 */
     float: none;
     display: block;
     position: absolute;
-    left:calc(47.5%);
+    left:calc(50% - 42.5px);
     color: white;
     text-align: center;
     padding: 0 0;
