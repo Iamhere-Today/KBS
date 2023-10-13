@@ -11,6 +11,12 @@ p {
     text-align: center;
     font-family: header, serif;
 }
+a {
+    color: #5DD6F5;
+    text-align: center;
+    font-family: header, serif;
+    text-decoration: none;
+}
 h3 {
     color: #dddddd;
 }
@@ -159,19 +165,59 @@ li a:hover:not(.active) {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.45);
     max-width: 350px;
-    height:800px;
+    height:700px;
     margin: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distributes space evenly */
+    z-index: 1;
 }
 
-.price {
-    color: grey !important; /* Ensure the price text is grey */
-    font-size: 22px;
+.price_left {
+    color: white !important; /* Ensure the price text is grey */
+    font-size: 20px;
     margin: 0; /* Reset margin to avoid spacing issues */
     margin-top: auto;
+    position: absolute;
+    z-index: 3;
+    left: 300px;
+    top: 398px;
+}
+.price_middle {
+    color: white !important; /* Ensure the price text is grey */
+    font-size: 20px;
+    margin: 0; /* Reset margin to avoid spacing issues */
+    margin-top: auto;
+    position: absolute;
+    z-index: 3;
+    left: 793px;
+    top: 398px;
+}
+.price_right {
+    color: white !important; /* Ensure the price text is grey */
+    font-size: 20px;
+    margin: 0; /* Reset margin to avoid spacing issues */
+    margin-top: auto;
+    position: absolute;
+    z-index: 3;
+    right: 77px;
+    top: 398px;
+}
+.price_left_image {
+    position: absolute;
+    z-index: 3;
+    left: 252px;
+}
+.price_middle_image {
+    position: absolute;
+    z-index: 3;
+    left: 740px;
+}
+.price_right_image {
+    position: absolute;
+    z-index: 3;
+    right: 75px;
 }
 
 .card button {
