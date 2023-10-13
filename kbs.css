@@ -11,6 +11,9 @@ p {
     text-align: center;
     font-family: header, serif;
 }
+h3 {
+    color: #dddddd;
+}
 @font-face { /* Font header */
     font-family: header;
     src: url("font/DelaGothicOne-Regular.ttf");
@@ -151,4 +154,71 @@ li a:hover:not(.active) {
 .nav-items-right {
     display: flex; /* Use flexbox for right items */
     align-items: center; /* Vertically center right items */
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.45);
+    max-width: 350px;
+    height:800px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes space evenly */
+}
+
+.price {
+    color: grey !important; /* Ensure the price text is grey */
+    font-size: 22px;
+    margin: 0; /* Reset margin to avoid spacing issues */
+    margin-top: auto;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: auto; /* Align the button to the bottom */
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Align cards at the top */
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+.product-title {
+    font-size: 24px;
+    text-align: center; /* Center-align the text */
+    margin: 10px 0; /* Add margin for spacing if desired */
+    margin-top: auto;
+}
+
+.card-beschrijving {
+    font-size: 15px;
+    text-align: center; /* Center-align the text */
+    margin: 10px 0; /* Add margin for spacing if desired */
+    margin-top: auto;
+    color:white;
+    font-family: body, sans-serif;
+}
+
+.centered-image {
+    display: block;
+    margin: 0 auto;
 }
