@@ -6,7 +6,7 @@
     <link rel="icon" type="img/x-icon" href="img/Nerdy_Gadgets_zonder_tekst.ico"> <!-- icon in je tab -->
 
     <link rel="stylesheet" type="text/css" href="kbs.css"> <!-- koppelt de css aan de html code -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
     <script>
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
@@ -47,77 +47,42 @@
 <h1>Nerdy Gadgets</h1>
 
 
-<section id="last">
-    <!-- heading -->
-    <div class="full">
-        <h3>Drop a Message</h3>
-
-        <div class="lt">
-
-            <!-- form starting -->
-            <form class="form-horizontal" method="post"
-                  action="contact.php">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <!-- name -->
-                        <input type="text" class="form-control"
-                               id="name" placeholder="NAME"
-                               name="name" value=""/>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <!-- email -->
-                        <input type="email" class="form-control"
-                               id="email" placeholder="EMAIL"
-                               name="email"
-                               value=""/>
-                    </div>
-                </div>
-
-                <!-- message -->
-                <textarea class="form-control" rows="10"
-                          placeholder="MESSAGE" name="message">
-			</textarea>
-
-                <button class="btn btn-primary send-button"
-                        id="submit" type="submit" value="SEND">
-                    <i class="fa fa-paper-plane"></i>
-                    <span class="send-text">SEND</span>
-                </button>
-            </form>
-            <!-- end of form -->
-        </div>
-
-        <!-- Contact information -->
-        <div class="rt">
-            <ul class="contact-list">
-                <li class="list-item">
-                    <i class="fa fa-map-marker fa-1x">
-							<span class="contact-text place">
-								your address
-							</span>
-                    </i>
-                </li>
-
-                <li class="list-item">
-                    <i class="fa fa-envelope fa-1x">
-							<span class="contact-text gmail">
-								<a href="mailto:yourmail@gmail.com"
-                                   title="Send me an email">
-									email@gmail.com</a>
-							</span>
-                    </i>
-                </li>
-
-                <li class="list-item">
-                    <i class="fa fa-phone fa-1x">
-							<span class="contact-text phone">
-								(033) 12345678
-							</span>
-                    </i>
-                </li>
+<?php
+// Output messages
+$responses = [];
+// Check if the form was submitted
+if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
+	// Validate email adress
+	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		$responses[] = 'Email is not valid!';
+	}
+	// Make sure the form fields are not empty
+	if (empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['name']) || empty($_POST['msg'])) {
+		$responses[] = 'Please complete all fields!';
+	}
+	// If there are no errors
+	if (!$responses) {
+		// Where to send the mail? It should be your email address
+		$to      = 'contact@example.com';
+		// Send mail from which email address?
+		$from = 'noreply@example.com';
+		// Mail subject
+		$subject = $_POST['subject'];
+		// Mail message
+		$message = $_POST['msg'];
+		// Mail headers
+		$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+		// Try to send the mail
+		if (mail($to, $subject, $message, $headers)) {
+			// Success
+			$responses[] = 'Message sent!';
+		} else {
+			// Fail
+			$responses[] = 'Message could not be sent! Please check your mail server settings!';
+		}
+	}
+}
+?>
             </ul>
         </div>
     </div>
