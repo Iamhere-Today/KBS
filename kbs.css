@@ -165,61 +165,43 @@ li a:hover:not(.active) {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.45);
     max-width: 350px;
-    height:700px;
-    margin: auto;
+    height:600px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distributes space evenly */
     z-index: 1;
+    position: relative;
 }
+.content_container {
+    height: 100%;
+}
+.image_container {
+    height:100%;
+}
+.price {
+    color: white !important; /* Ensure the price text is grey */
+    font-size: 16px;
+    z-index: 3;
+}
+.price_image {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+}
+.price_container {
+    position:absolute;
+    right:0;
+    top:0;
+    padding: 0 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:max-content;
+    text-align:right;
+}
+.addToCartButton {
 
-.price_left {
-    color: white !important; /* Ensure the price text is grey */
-    font-size: 20px;
-    margin: 0; /* Reset margin to avoid spacing issues */
-    margin-top: auto;
-    position: absolute;
-    z-index: 3;
-    left: 300px;
-    top: 398px;
 }
-.price_middle {
-    color: white !important; /* Ensure the price text is grey */
-    font-size: 20px;
-    margin: 0; /* Reset margin to avoid spacing issues */
-    margin-top: auto;
-    position: absolute;
-    z-index: 3;
-    left: 793px;
-    top: 398px;
-}
-.price_right {
-    color: white !important; /* Ensure the price text is grey */
-    font-size: 20px;
-    margin: 0; /* Reset margin to avoid spacing issues */
-    margin-top: auto;
-    position: absolute;
-    z-index: 3;
-    right: 77px;
-    top: 398px;
-}
-.price_left_image {
-    position: absolute;
-    z-index: 3;
-    left: 252px;
-}
-.price_middle_image {
-    position: absolute;
-    z-index: 3;
-    left: 740px;
-}
-.price_right_image {
-    position: absolute;
-    z-index: 3;
-    right: 75px;
-}
-
 .card button {
     border: none;
     outline: 0;
@@ -230,7 +212,9 @@ li a:hover:not(.active) {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-    margin-top: auto; /* Align the button to the bottom */
+    position:absolute;
+    bottom:1rem;
+    left: 0
 }
 
 .card button:hover {
@@ -239,32 +223,38 @@ li a:hover:not(.active) {
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start; /* Align cards at the top */
+    gap:2rem;
 }
 
 .column {
     flex: 1;
-    margin: 10px;
 }
 
 .product-title {
     font-size: 24px;
     text-align: center; /* Center-align the text */
     margin: 10px 0; /* Add margin for spacing if desired */
-    margin-top: auto;
 }
 
 .card-beschrijving {
     font-size: 15px;
     text-align: center; /* Center-align the text */
-    margin: 10px 0; /* Add margin for spacing if desired */
-    margin-top: auto;
     color:white;
     font-family: body, sans-serif;
+    margin-bottom:6rem;
 }
 
 .centered-image {
     display: block;
     margin: 0 auto;
+    max-height:300px;
+    max-width:300px;
+}
+.upper {
+    height: 100%;
+}
+.title_container{
+    height: 4rem;
 }
