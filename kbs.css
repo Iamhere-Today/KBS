@@ -11,8 +11,45 @@ p {
     text-align: center;
     font-family: header, serif;
 }
+a {
+    color: #5DD6F5;
+    text-align: center;
+    font-family: header, serif;
+    text-decoration: none;
+}
+
 h3 {
     color: #dddddd;
+}
+
+/*noinspection ALL*/
+L {
+    color: #321DE5;
+    text-align: center;
+    font-family: header, serif;
+    text-decoration: none;
+    position: absolute;
+    left: 170px;
+    text-shadow:
+            -0.5px -0.5px 0 #5DD6F5,
+            0.5px -0.5px 0 #5DD6F5,
+            -0.5px 0.5px 0 #5DD6F5,
+            0.5px 0.5px 0 #5DD6F5;
+}
+
+/*noinspection ALL*/
+R {
+    color: #321DE5;
+    text-align: center;
+    font-family: header, serif;
+    text-decoration: none;
+    position: absolute;
+    right: 250px;
+    text-shadow:
+            -0.5px -0.5px 0 #5DD6F5,
+            0.5px -0.5px 0 #5DD6F5,
+            -0.5px 0.5px 0 #5DD6F5,
+            0.5px 0.5px 0 #5DD6F5;
 }
 @font-face { /* Font header */
     font-family: header;
@@ -34,7 +71,7 @@ h3 {
     position: relative; /* Add this for absolute positioning */
 }
 
-.balk {
+.balk { /*left */
     float: left;
     display: block;
     color: white;
@@ -42,7 +79,7 @@ h3 {
     padding: 26px 16px;
     text-decoration: none;
 }
-.balk1 {
+.balk1 { /* right */
     float: right;
     display: block;
     color: white;
@@ -60,6 +97,12 @@ h3 {
     padding: 0 0;
     text-decoration: none;
     border: #3e60fc;
+}
+.balk_tekst {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 li a:hover:not(.active) {
@@ -117,7 +160,7 @@ li a:hover:not(.active) {
     border: 1px solid #ddd;
     z-index: 2;
     top: 100%; /*178  Adjust this value to control the vertical position */
-    left: -28%;
+    left: -10%;
 }
 
 .dropdown-content a {
@@ -125,6 +168,7 @@ li a:hover:not(.active) {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-family: Arial, serif;
 }
 
 .button:hover {
@@ -159,21 +203,43 @@ li a:hover:not(.active) {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.45);
     max-width: 350px;
-    height:800px;
-    margin: auto;
+    height:600px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distributes space evenly */
+    z-index: 1;
+    position: relative;
 }
-
+.content_container {
+    height: 100%;
+}
+.image_container {
+    height:100%;
+}
 .price {
-    color: grey !important; /* Ensure the price text is grey */
-    font-size: 22px;
-    margin: 0; /* Reset margin to avoid spacing issues */
-    margin-top: auto;
+    color: white !important; /* Ensure the price text is grey */
+    font-size: 16px;
+    z-index: 3;
 }
+.price_image {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+}
+.price_container {
+    position:absolute;
+    right:0;
+    top:0;
+    padding: 0 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:max-content;
+    text-align:right;
+}
+.addToCartButton {
 
+}
 .card button {
     border: none;
     outline: 0;
@@ -184,7 +250,9 @@ li a:hover:not(.active) {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-    margin-top: auto; /* Align the button to the bottom */
+    position:absolute;
+    bottom:1rem;
+    left: 0
 }
 
 .card button:hover {
@@ -193,32 +261,38 @@ li a:hover:not(.active) {
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start; /* Align cards at the top */
+    gap:2rem;
 }
 
 .column {
     flex: 1;
-    margin: 10px;
 }
 
 .product-title {
     font-size: 24px;
     text-align: center; /* Center-align the text */
     margin: 10px 0; /* Add margin for spacing if desired */
-    margin-top: auto;
 }
 
 .card-beschrijving {
     font-size: 15px;
     text-align: center; /* Center-align the text */
-    margin: 10px 0; /* Add margin for spacing if desired */
-    margin-top: auto;
     color:white;
     font-family: body, sans-serif;
+    margin-bottom:6rem;
 }
 
 .centered-image {
     display: block;
     margin: 0 auto;
+    max-height:300px;
+    max-width:300px;
+}
+.upper {
+    height: 100%;
+}
+.title_container{
+    height: 4rem;
 }
