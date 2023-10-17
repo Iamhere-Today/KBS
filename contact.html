@@ -5,7 +5,7 @@
     <title>Nerdy Gadgets</title> <!-- tab titel -->
     <link rel="icon" type="img/x-icon" href="img/Nerdy_Gadgets_zonder_tekst.ico"> <!-- icon in je tab -->
 
-    <link rel="stylesheet" type="text/css" href="kbs.css"> <!-- koppelt de css aan de html code -->
+    <link rel="stylesheet" type="text/css" href="CSS/contact.css"> <!-- koppelt de css aan de html code -->
 
     <script>
         /* When the user clicks on the button,
@@ -53,30 +53,34 @@
 
 <h1>Nerdy Gadgets</h1>
 
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-    <title>Contact form</title>
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700"
-    rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Contact Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<main>
-    <p>SEND E-MAIL</p>
-    <form class="contact-form" action="contactform.php" method="post">
-        <input type="text" name="name" placeholder="Full name">
-        <input type="text" name="mail" placeholder="Your e-mail">
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea name="message" placeholder="Message"></textarea>
-        <button type="submit" name="submit">SEND MAIL</button>
+<div class="container">
+    <h2>Contact Us</h2>
+    <form action="process_form.php" method="POST" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" required></textarea>
+        </div>
+
+        <input type="submit" value="Submit">
     </form>
-
-</main>
-
-
-
+</div>
+<script src="script.js"></script>
 </body>
 </html>
-
