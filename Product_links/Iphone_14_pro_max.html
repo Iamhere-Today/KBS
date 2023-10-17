@@ -6,11 +6,44 @@
     <title>Nerdy Gadgets</title> <!-- tab titel -->
     <link rel="icon" type="../img/x-icon" href="../img/Nerdy_Gadgets_zonder_tekst.ico"> <!-- icon in je tab -->
     <link rel="stylesheet" type="text/css" href="../CSS/kbs.css"> <!-- koppelt de css aan de html code -->
+    <link rel="stylesheet" type="text/css" href="../CSS/product.css"> <!-- koppelt de product css aan de html code -->
     <script>
+        let slideIndex = 1;
+        showSlides(slideIndex + 1);
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
         }
     </script>
 </head>
@@ -24,7 +57,8 @@
     </li>
     <li class="balk">
         <div class="dropdown">
-            <button onclick="myFunction()" class="balk button"><img src="../img/Menu.png" style="height: 40px;" alt="menu"></button>
+            <button onclick="myFunction()" class="balk button"><img src="../img/Menu.png" style="height: 40px;"
+                                                                    alt="menu"></button>
             <div id="myDropdown" class="dropdown-content">
                 <a href="../about.html">About</a>
                 <a href="../contact.html">Contact</a>
@@ -32,12 +66,16 @@
         </div>
     </li>
     <li class="balk_tekst">
-        <L style="left: 125px;"> <img src="../img/delivery_truck_inverted.png" alt="delivery truck" style="height: 40px; width:40px;"></L>
+        <L style="left: 125px;"><img src="../img/delivery_truck_inverted.png" alt="delivery truck"
+                                     style="height: 40px; width:40px;"></L>
         <L> Vóór 23 uur besteld, morgen in huis!</L>
-        <L style="left: 510px;"> <img src="../img/delivery_truck.png" alt="delivery truck" style="height: 40px; width:40px;"></L>
-        <R style="right: 207px;"> <img src="../img/delivery_truck.png" alt="delivery truck" style="height: 40px; width:40px;"></R>
+        <L style="left: 510px;"><img src="../img/delivery_truck.png" alt="delivery truck"
+                                     style="height: 40px; width:40px;"></L>
+        <R style="right: 207px;"><img src="../img/delivery_truck.png" alt="delivery truck"
+                                      style="height: 40px; width:40px;"></R>
         <R> Gratis verzending vanaf €20</R>
-        <R style="right: 523px;"> <img src="../img/delivery_truck_inverted.png" alt="delivery truck" style="height: 40px; width:40px;"></R>
+        <R style="right: 523px;"><img src="../img/delivery_truck_inverted.png" alt="delivery truck"
+                                      style="height: 40px; width:40px;"></R>
     </li>
 
     <div class="nav-items-right"> <!-- Wrap both "Sign Up" and "Shop Cart" in the same div -->
@@ -48,6 +86,43 @@
     </div>
 </ul>
 <h1>Nerdy Gadgets</h1>
-
+<div class="product">
+    <div class="product-imgs">
+        <div class="mySlides">
+            <div class="numbertext">1 / 3</div>
+            <img src="\img/producten/50GWOQE58kZq-removebg-preview.png" style="width:300px">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">2 / 3</div>
+            <img src="\img/producten/YXAAjLAN6kYK-removebg-preview.png" style="width:300px">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">3 / 3</div>
+            <img src="\img/producten/q842Jx8DrjAG-removebg-preview.png" style="width:300px">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        <div class="row">
+            <div class="column">
+                <img class="demo" src="\img/producten/50GWOQE58kZq-removebg-preview.png" style="width: 100px"
+                     onclick="currentSlide(1)"
+                     alt="pic1">
+            </div>
+            <div class="column">
+                <img class="demo" src="\img/producten/YXAAjLAN6kYK-removebg-preview.png" style="width:100px"
+                     onclick="currentSlide(2)"
+                     alt="pic2">
+            </div>
+            <div class="column">
+                <img class="demo" src="\img/producten/q842Jx8DrjAG-removebg-preview.png" style="width:100px"
+                     onclick="currentSlide(3)"
+                     alt="pic3">
+            </div>
+        </div>
+    </div>
+    <div class="product-text">
+        <b>Iphone 14 Pro Max</b>
+    </div>
+</div>
 </body>
 </html>
