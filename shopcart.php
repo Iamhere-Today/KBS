@@ -13,7 +13,7 @@
         }
 
         function add_to_cart() {
-            location.href="shopcart.html";
+            location.href="shopcart.php";
         }
     </script>
 
@@ -48,15 +48,17 @@
         </li>
 
         <div class="nav-items-right"> <!-- Wrap both "Sign Up" and "Shop Cart" in the same div -->
-            <li class="nav-item"><a href="shopcart.html" class="balk1"> <img src="img/cart.png" alt="Shopping Cart"
+            <li class="nav-item"><a href="shopcart.php" class="balk1"> <img src="img/cart.png" alt="Shopping Cart"
                                                                              style="width:35px;height:35px;"></a></li>
             <li class="nav-item"><a href="signup_kbs.html" class="balk1"> <img src="img/profile.png" alt="Sign In/Up"
                                                                                style="width:30px;height:35px;"></a></li>
         </div>
     </ul>
 </section_balk>
-<h1 onclick="myFunction()"><img src="img/cart.png" alt="Shopping Cart"
+<br>
+<h1><img src="img/cart.png" alt="Shopping Cart"
          style="max-width:40px;height:35px;">Shopping Cart</h1>
+<br>
 <style>
     html, body {
         height: 50%;
@@ -176,8 +178,9 @@ if(mysqli_num_rows($result) > 0) {
 
 </script>
 -->
+<br>a
 <!-- ----------------------------------------------- footer NIET AANKOMEN! -------------------------------------------- -->
-<br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <section_footer>
     <link rel="stylesheet" href="CSS/footer.css">
     <footer class="footer">
