@@ -1,112 +1,160 @@
+<?php session_start() ?>
 <!DOCTYPE html>
-<!--suppress ALL -->
-<html lang="en"> <!-- gekozen taal voor de website is Engels -->
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- zorgt dat het alfabet geaccepteerd wordt -->
-    <title>Nerdy Gadgets</title> <!-- tab titel -->
-    <link rel="icon" type="img/x-icon" href="img/Nerdy_Gadgets_zonder_tekst.ico"> <!-- icon in je tab -->
+    <meta charset="UTF-8">
+    <title>Title</title>
     <link rel="stylesheet" type="text/css" href="CSS/index.css"> <!-- koppelt de css aan de html code -->
     <link rel="stylesheet" type="text/css" href="CSS/signup.css"> <!-- koppelt de css aan de html code -->
-    <script>
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        function add_to_cart() {
-            location.href = "shopcart.php";
-        }
-
-        document.querySelector('.img__btn').addEventListener('click', function () {
-            document.querySelector('.cont').classList.toggle('s--signup');
-        });
-    </script>
-
 </head>
 <body>
-<section_balk
+<section_balk>
+    <ul class="balky">
+
+        <li class="nav-item logo">
+            <a href="index.html" class="balk_midden">
+                <img src="img/Nerdy_Gadgets_zonder_tekst.png" alt="nerdy gadgets logo"
+                     style="width:85px;height:86px;"></a>
+
+        </li>
+        <li class="balk">
+            <div class="dropdown">
+                <button onclick="myFunction()" class="balk button"><img src="img/Menu.png"
+                                                                        style="height: 40px; width: 40px" alt="menu">
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </li>
+        <li class="balk_tekst">
+            <L style="left: 125px;"><img src="img/delivery_truck_inverted.png" alt="delivery truck"
+                                         style="height: 40px; width:40px;"></L>
+            <L> Vóór 23 uur besteld, morgen in huis!</L>
+            <L style="left: 510px;"><img src="img/delivery_truck.png" alt="delivery truck"
+                                         style="height: 40px; width:40px;"></L>
+            <R style="right: 207px;"><img src="img/delivery_truck.png" alt="delivery truck"
+                                          style="height: 40px; width:40px;"></R>
+            <R> Gratis verzending vanaf €20</R>
+            <R style="right: 523px;"><img src="img/delivery_truck_inverted.png" alt="delivery truck"
+                                          style="height: 40px; width:40px;"></R>
+        </li>
+
+        <div class="nav-items-right"> <!-- Wrap both "Sign Up" and "Shop Cart" in the same div -->
+            <li class="nav-item"><a href="shopcart.php" class="balk1"> <img src="img/cart.png" alt="Shopping Cart"
+                                                                            style="width:35px;height:35px;"></a></li>
+            <li class="nav-item"><a href="signup_kbs.php" class="balk1"> <img src="img/profile.png" alt="Sign In/Up"
+                                                                              style="width:30px;height:35px;"></a></li>
+        </div>
+    </ul>
+</section_balk>
 <br>
 <h1>Nerdy Gadgets</h1>
 <br>
-<div class="from sign-up">
-    <form class="signup" method="post">
-        <h2>Sign Up</h2>
-        <label for="firstname"><b>First name</b></label>
-        <input id="firstname" name="firstname" placeholder="Enter First Name" required type="text"
-               style="margin-bottom:5px">
-        <br>
-        <label for="lastname"><b>Last name</b></label>
-        <input id="lastname" name="lastname" placeholder="Enter Surname" required type="text" style="margin-bottom:5px">
-        <!--<label for="prefix"><b>Prefix</b></label> als je tussenvoegsel appart wilt hebben--!>
-        <input id="prefix" name="prefix" placeholder="Enter Prefix" type="text" style="margin-bottom:5px">
-        <br>
-        <label for="email"><b>Email</b></label>
-        <input id="email" name="email" placeholder="Enter Email" required type="text" style="margin-bottom:5px">
-        <br>
-        <label for="password"><b>Password</b></label>
-        <input id="password" name="password" placeholder="Enter Password" required type="password"
-               style="margin-bottom:5px">
-        <br>
-        <button><b>Sign Up</b></button>
-        <br>
-        <p>By creating an account you agree to our <a style="color:dodgerblue">Terms & Privacy</a>.</p>
-    </form>
-</div>
-<div class="sub-cont">
-    <div class="img">
-        <div class="img__text m--up">
-
-            <h3>Don't have an account? Please Sign up!<h3>
-        </div>
-        <div class="img__text m--in">
-
-            <h3>If you already has an account, just sign in.<h3>
-        </div>
-        <div class="img__btn">
-            <span class="m--up">Sign Up</span>
-            <span class="m--in">Sign In</span>
-        </div>
-    </div>
-    <div class="from sign-in">
-        <form class="signup" method="post">
-            <h2>Sign In</h2>
-            <label for="email"><b>Email</b></label>
-            <input id="email" name="email" placeholder="Enter Email" required type="text" style="margin-bottom:5px">
-            <br>
-            <label for="password"><b>Password</b></label>
-            <input id="password" name="password" placeholder="Enter Password" required type="password"
-                   style="margin-bottom:5px">
-            <br>
-            <button><b>Sign In</b></button>
-            <br>
-            <p>By creating an account you agree to our <a style="color:dodgerblue">Terms & Privacy</a>.</p>
+<div class="cont">
+    <div class="form sign-in">
+        <form name="LogIn"class="signup" method="post" action="signup_kbs.php?formname=form1">
+            <h2>Welcome</h2>
+            <label>
+                <span>Email</span>
+                <input name="email" type="email" required/>
+            </label>
+            <label>
+                <span>Password</span>
+                <input name="wachtwoord" type="password" required/>
+            </label>
+            <p class="forgot-pass">Forgot password?</p>
+            <button type="button" class="submit">Sign In</button>
         </form>
     </div>
-</div>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $connection = mysqli_connect("localhost", "root", "", "nerdy_gadgets_start", "3306");
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $firstname = $_POST['firstname'];
-    $prefix = $_POST['prefix'];
-    $lastname = $_POST['lastname'];
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
 
-    if (!empty($email) && !empty($password) && !empty($firstname) && !empty($lastname)) {
-        $sql = "insert into user (email, password, first_name, surname_prefix, surname) 
-            values ('$email', '$password', '$firstname', '$prefix', '$lastname')";
-        $result = mysqli_query($connection, $sql);
-    } else {
-        echo "<p>Geen valide invoer gegeven</p>";
+                <h3>Don't have an account? Please Sign up!</h3>
+            </div>
+            <div class="img__text m--in">
+
+                <h3>If you already have an account, just sign in.</h3>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Sign In</span>
+            </div>
+        </div>
+        <div class="form sign-up" method="post">
+            <form name="SignUp" action="signup_kbs.php?formname=form2">
+                <h2>Create your Account</h2>
+                <label>
+                    <span>First Name</span>
+                    <input name="voornaam" type="text" required/>
+                </label>
+                <label>
+                    <span>Prefix</span>
+                    <input name="tussenvoegsel" type="text" />
+                </label>
+                <label>
+                    <span>Surname</span>
+                    <input name="achternaam" type="text" required/>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input name="email2" type="email" required/>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input name="wachtwoord2" type="password" required/>
+                </label>
+                <button type="button" class="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('.img__btn').addEventListener('click', function() {
+        document.querySelector('.cont').classList.toggle('s--signup');
+    });
+</script>
+<?php
+$connection = mysqli_connect("localhost","root"," ","nerdy_gadgets_start", "3306");
+$voornaam= $_POST['voornaam'];
+$tussenvoegsel = $_POST['tussenvoegsel'];
+$achternaam = $_POST['achternaam'];
+$email = $_POST['email'];
+$email2 = $_POST['email2'];
+$wachtwoord = $_POST['wachtwoord'];
+$wachtwoord2 = $_POST['wachtwoord2'];
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if($_GET['formname'] == 'form2'){
+        if (!empty($voornaam) && !empty($tussenvoegsel) && !empty($achternaam) && !empty($email2) && !empty($wachtwoord)) {
+            $signup = "insert user (first_name, surname_prefix, surname, email, password) 
+            values('$voornaam','$tussenvoegsel','$achternaam',$email2, $wachtwoord2)";
+        } elseif (!empty($voornaam) && empty($tussenvoegsel) && !empty($achternaam) && !empty($email2) && !empty($wachtwoord2)) {
+            $signup = "insert user (first_name, surname, email, password) 
+            values('$voornaam','$achternaam',$email2, $wachtwoord2)";
+        } else {
+            echo "<p>No Valid Input</p>";
+        }
+        $result = mysqli_query($connection,$signup);
+        echo $result;
     }
-// resultaat verwerken
-    echo $result;
-    mysqli_close($connection);
+    elseif($_GET['formname'] == 'from1'){
+        if(!empty($email) && !empty($wachtwoord)){
+            $findpassword =  "select password from user where email = '$email'";
+            $foundpassword = mysqli_query($connection, $findpassword);
+            echo $foundpassword;
+            if($wachtwoord == $foundpassword){
+                $findid = " select id from user where email = '$email' AND password = '$wachtwoord' ";
+                $foundid = mysqli_query($connection,$findid);
+                echo $foundid;
+                $_SESSION["id"] = "$foundid";
+            }
+        }
+
+    }
 }
 ?>
-<!-- ----------------------------------------------- footer NIET AANKOMEN -------------------------------------------- -->
-<br></br><br></br><br></br><br></br>
 <section_footer>
     <link rel="stylesheet" href="../CSS/footer.css">
     <footer class="footer">
@@ -148,7 +196,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </footer>
 </section_footer>
-
 </body>
-<!-- ----------------------------------------------- footer NIKS ONDER PLAATSEN -------------------------------------------- -->
 </html>
