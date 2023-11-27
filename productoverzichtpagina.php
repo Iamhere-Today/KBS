@@ -58,53 +58,14 @@
 </section_balk>
 <h1>Nerdy Gadget</h1>
 <h1 style="color: white; font-size: 30px ">Producten</h1>
-<section1>
-    <div class="container1">
-        <div class="img"><img class="img" src="img/producten/gVJY2kP9wWvl.jpg" alt="paypal logo"></div>
-        <div class="item item-2">Asus Laptop<br>de beste laptop ooit <br> hij heeft 10 gb<br> 2000 ram<br> 24 uur batterijduur<br> kan nooit kapot</div>
-        <div class="item item-3">$2.50
-            <button class="btn">toevoegen</button>
-        </div>
-    </div>
-    <div class="container1">
-        <div class="img"><img class="img" src="img/producten/7Mg2Ym8jWg2j.jpg" alt="paypal logo"></div>
-        <div class="item item-2">lenovo Laptop<br>de beste laptop op de markt <br> hij heeft 200000 gb<br> 2000 ram<br> rocketbooster<br> je kan er mee vliegen</div>
-        <div class="item item-3"> $9000
-            <button class="btn">toevoegen</button>
-
-        </div>
-    </div>
-</section1>
 <br>
 <style>
     html, body {
         height: 50%;
     }
-    #tableContainer-1 {
-        height: 100%;
-        width: 100%;
-        display: table;
-    }
-    #tableContainer-2 {
-        vertical-align: middle;
-        display: table-cell;
-        height: 100%;
-    }
-    #myTable {
-        margin: 0 auto;
-        width: 75%;
-        height: 100%;
-    }
     input.largerCheckbox {
         width: 300px;
         height: 150px;
-    }
-    .buy-now {
-        color: #20242c;
-        text-align: center;
-        font-family: header, serif;
-        height: 50px;
-        max-width: 400px;
     }
     th, td {
         padding: 8px;
@@ -115,11 +76,13 @@
     table {
         border: 5px solid #dddddd;
         border-radius: 10px;
+        margin-top: auto;
     }
     .center {
         margin-left: auto;
         margin-right: auto;
     }
+
 </style>
 <table class="center">
 <tr>
@@ -129,11 +92,12 @@
 <?php
 $a = "order by price desc";
 $connection = mysqli_connect("localhost","root", "", "nerdy_gadgets_start", "3306");
-$sql = "select name, price from product $a";
+$sql = "select image, name, price from product $a";
 $result = mysqli_query($connection, $sql);
 if(mysqli_num_rows($result) > 0) {
 while($row = mysqli_fetch_assoc($result)){
 echo '<tr>';
+    echo '<td>'. $row['image'] .'</td>';
     echo '<td>'. $row['name'] .'</td>';
     echo '<td>'. $row['price'] .'</td>';
     echo '</tr>';
@@ -142,15 +106,16 @@ echo '<tr>';
 
 }
 
-
 ?>
+</table>
 <!-------------------------------------- footer NIET AANKOMEN -------------------------------------------- -->
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
+        <link rel="stylesheet" href="CSS/footer.css">
+        <footer>
+            AAAAAAAAAAAAAAAAAAAAAAAAAA
+        </footer>
+</body>
+<!-- ----------------------------------------------- footer NIKS ONDER PLAATSEN -------------------------------------------- -->
+
 <section_footer>
     <link rel="stylesheet" href="CSS/footer.css">
     <footer class="footer">
@@ -193,6 +158,5 @@ echo '<tr>';
 
     </footer>
 </section_footer>
-</body>
-<!-- ----------------------------------------------- footer NIKS ONDER PLAATSEN -------------------------------------------- -->
+-->
 </html>
