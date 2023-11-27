@@ -147,38 +147,8 @@ if(mysqli_num_rows($result) > 0) {
             } else {echo "No items in shopping cart";}}
         ?>
     </button></h1>
-<!--<div id="tableContainer-1">
-    <div id="tableContainer-2">
-        <table class="shop-cart" id="myTable">
-            <tr><td>InShopCart</td><td>ProductName</td><td>ProductImg</td><td>ProductPrice</td></tr>
-            <tr><td><input type="checkbox" class="largerCheckbox" id="cb_1" onclick="total_price()"/></td><td><a href="Product_links/Iphone_14_pro_max.html"> Iphone_14_pro_max </a></td><td><img class="centered-image" src="img/producten/50GWOQE58kZq-removebg-preview.png" alt="Iphone 14 Pro Max" style="max-width:200px;max-height:200px"></td><td>€1.200</td></tr>
-            <tr><td><input type="checkbox" class="largerCheckbox" id="cb_2" onclick="total_price()"/></td><td><a href="Product_links/Lenovo_legion_5.html"> RTX_3060</a></td><td><img class="centered-image" src="img/producten/39ZY06zrJEZp-removebg-preview.png" alt="RTX 3060" style="max-width:200px;max-height:200px"></td><td>€349,99</td></tr>
-            <tr><td><input type="checkbox" class="largerCheckbox" id="cb_3" onclick="total_price()"/></td><td> <a href="Product_links/RTX_3060.html"> Lenovo_legion_5_pro</a> </td><td><img class="centered-image" src="img/producten/q5A5OnAVnvx7-removebg-preview.png" alt="Legion Laptop" style="max-width:200px;max-height:200px"></td><td>€1.049,99</td></tr>
-        </table>
-    </div>
-</div>
-<h1><button class="buy-now">
-  Purchase for €<i id="demo">0</i>
 
-</button></h1>
-
-<script>
-    function total_price() { cb = 0
-        if (document.getElementById("cb_1").checked) {
-            cb += 1200
-        }
-        if (document.getElementById("cb_2").checked) {
-            cb += 349.99
-        }
-        if (document.getElementById("cb_3").checked) {
-            cb += 1049.99
-        }
-        document.getElementById("demo").innerHTML = cb;
-    }
-
-</script>
--->
-<br>a
+<br>
 <!-- ----------------------------------------------- footer NIET AANKOMEN! -------------------------------------------- -->
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <section_footer>
