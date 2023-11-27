@@ -49,9 +49,9 @@
         </li>
 
         <div class="nav-items-right"> <!-- Wrap both "Sign Up" and "Shop Cart" in the same div -->
-            <li class="nav-item"><a href="shopcart.html" class="balk1"> <img src="img/cart.png" alt="Shopping Cart"
+            <li class="nav-item"><a href="shopcart.php" class="balk1"> <img src="img/cart.png" alt="Shopping Cart"
                                                                              style="width:35px;height:35px;"></a></li>
-            <li class="nav-item"><a href="signup_kbs.html" class="balk1"> <img src="img/profile.png" alt="Sign In/Up"
+            <li class="nav-item"><a href="signup_kbs.php" class="balk1"> <img src="img/profile.png" alt="Sign In/Up"
                                                                                style="width:30px;height:35px;"></a></li>
         </div>
     </ul>
@@ -75,7 +75,75 @@
         </div>
     </div>
 </section1>
+<br>
+<style>
+    html, body {
+        height: 50%;
+    }
+    #tableContainer-1 {
+        height: 100%;
+        width: 100%;
+        display: table;
+    }
+    #tableContainer-2 {
+        vertical-align: middle;
+        display: table-cell;
+        height: 100%;
+    }
+    #myTable {
+        margin: 0 auto;
+        width: 75%;
+        height: 100%;
+    }
+    input.largerCheckbox {
+        width: 300px;
+        height: 150px;
+    }
+    .buy-now {
+        color: #20242c;
+        text-align: center;
+        font-family: header, serif;
+        height: 50px;
+        max-width: 400px;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        color: #dddddd;
+    }
+    table {
+        border: 5px solid #dddddd;
+        border-radius: 10px;
+    }
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<table class="center">
+<tr>
+    <th>Product</th>
+    <th>price</th>
+</tr>
+<?php
+$a = "order by price desc";
+$connection = mysqli_connect("localhost","root", "", "nerdy_gadgets_start", "3306");
+$sql = "select name, price from product $a";
+$result = mysqli_query($connection, $sql);
+if(mysqli_num_rows($result) > 0) {
+while($row = mysqli_fetch_assoc($result)){
+echo '<tr>';
+    echo '<td>'. $row['name'] .'</td>';
+    echo '<td>'. $row['price'] .'</td>';
+    echo '</tr>';
 
+}
+
+}
+
+
+?>
 <!-------------------------------------- footer NIET AANKOMEN -------------------------------------------- -->
 <br><br><br><br>
 <br><br><br><br>
