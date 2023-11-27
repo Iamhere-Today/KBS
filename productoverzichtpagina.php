@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="CSS/website_format.css"><!-- koppelt de css aan de html code -->
 
     <!-- ------------------------------------------------LET OP--------------------------------------- -->
-    <link rel="stylesheet" type="text/css" href="CSS/productoverzichtpagina.css"><!-- Hier moet nog wat ingevuld worden -->
+    <link rel="stylesheet" type="text/css" href="CSS/productoverzichtpagina.css">
+    <!-- Hier moet nog wat ingevuld worden -->
     <!-- ------------------------------------------------LET OP--------------------------------------- -->
 
     <script>
@@ -32,7 +33,9 @@
         </li>
         <li class="balk">
             <div class="dropdown">
-                <button onclick="myFunction()" class="balk button" ><img src="img/Menu.png" style="height: 40px; width: 40px" alt="menu"></button>
+                <button onclick="myFunction()" class="balk button"><img src="img/Menu.png"
+                                                                        style="height: 40px; width: 40px" alt="menu">
+                </button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
@@ -40,79 +43,62 @@
             </div>
         </li>
         <li class="balk_tekst">
-            <L style="left: 125px;"> <img src="img/delivery_truck_inverted.png" alt="delivery truck" style="height: 40px; width:40px;"></L>
+            <L style="left: 125px;"><img src="img/delivery_truck_inverted.png" alt="delivery truck"
+                                         style="height: 40px; width:40px;"></L>
             <L> Vóór 23 uur besteld, morgen in huis!</L>
-            <L style="left: 510px;"> <img src="img/delivery_truck.png" alt="delivery truck" style="height: 40px; width:40px;"></L>
-            <R style="right: 207px;"> <img src="img/delivery_truck.png" alt="delivery truck" style="height: 40px; width:40px;"></R>
+            <L style="left: 510px;"><img src="img/delivery_truck.png" alt="delivery truck"
+                                         style="height: 40px; width:40px;"></L>
+            <R style="right: 207px;"><img src="img/delivery_truck.png" alt="delivery truck"
+                                          style="height: 40px; width:40px;"></R>
             <R> Gratis verzending vanaf €20</R>
-            <R style="right: 523px;"> <img src="img/delivery_truck_inverted.png" alt="delivery truck" style="height: 40px; width:40px;"></R>
+            <R style="right: 523px;"><img src="img/delivery_truck_inverted.png" alt="delivery truck"
+                                          style="height: 40px; width:40px;"></R>
         </li>
 
         <div class="nav-items-right"> <!-- Wrap both "Sign Up" and "Shop Cart" in the same div -->
             <li class="nav-item"><a href="shopcart.php" class="balk1"> <img src="img/cart.png" alt="Shopping Cart"
-                                                                             style="width:35px;height:35px;"></a></li>
+                                                                            style="width:35px;height:35px;"></a></li>
             <li class="nav-item"><a href="signup_kbs.php" class="balk1"> <img src="img/profile.png" alt="Sign In/Up"
-                                                                               style="width:30px;height:35px;"></a></li>
+                                                                              style="width:30px;height:35px;"></a></li>
         </div>
     </ul>
 </section_balk>
 <h1>Nerdy Gadget</h1>
 <h1 style="color: white; font-size: 30px ">Producten</h1>
 <br>
-<style>
-    html, body {
-        height: 50%;
-    }
-    input.largerCheckbox {
-        width: 300px;
-        height: 150px;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-        color: #dddddd;
-    }
-    table {
-        border: 5px solid #dddddd;
-        border-radius: 10px;
-        margin-top: auto;
-    }
-    .center {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-</style>
 <table class="center">
-<tr>
-    <th>Product</th>
-    <th>price</th>
-</tr>
-<?php
-$a = "order by price desc";
-$connection = mysqli_connect("localhost","root", "", "nerdy_gadgets_start", "3306");
-$sql = "select image, name, price from product $a";
-$result = mysqli_query($connection, $sql);
-if(mysqli_num_rows($result) > 0) {
-while($row = mysqli_fetch_assoc($result)){
-echo '<tr>';
-    echo '<td>'. $row['image'] .'</td>';
-    echo '<td>'. $row['name'] .'</td>';
-    echo '<td>'. $row['price'] .'</td>';
-    echo '</tr>';
+    <tr>
+        <th></th>
+        <th>Product</th>
+        <th>price</th>
+    </tr>
+    <?php
+    error_reporting(0);
+    $a = "order by category asc";
+    $connection = mysqli_connect("localhost", "root", "", "nerdy_gadgets_start", "3306");
+    $sql = "select image, name, price from product $a";
+    $imagesql = "select image from product $a";
+    $result = mysqli_query($connection, $sql);
+    $imageresult = mysqli_query($connection, $imagesql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<tr>';
+            echo '<td>' . '<img src="img/producten/'.$row['image'].'.jpg" width="100" >' . '</td>';
+            echo '<td>' . $row['name'] . '</td>';
+            echo '<td>' . $row['price'] . '</td>';
+            echo '</tr>';
 
-}
+        }
 
-}
+    }
 
-?>
+    ?>
 </table>
 <!-------------------------------------- footer NIET AANKOMEN -------------------------------------------- -->
-        <link rel="stylesheet" href="CSS/footer.css">
-        <footer>
-            AAAAAAAAAAAAAAAAAAAAAAAAAA
-        </footer>
+<link rel="stylesheet" href="CSS/footer.css">
+<footer>
+    AAAAAAAAAAAAAAAAAAAAAAAAAA
+</footer>
 </body>
 <!-- ----------------------------------------------- footer NIKS ONDER PLAATSEN -------------------------------------------- -->
 
@@ -128,7 +114,7 @@ echo '<tr>';
                         <li><a href="shopcart.html">shoppingcart</a></li>
                         <li><a href="contact.html">contact</a></li>
                         <li><a href="signup_kbs.html">sign up</a></li>
-                        <li><a href="about.html">about</a> </li>
+                        <li><a href="about.html">about</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

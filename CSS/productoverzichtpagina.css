@@ -31,3 +31,30 @@
     border: 1px solid;
     border-radius: 20px;
 }
+
+html, body {
+    height: 50%;
+}
+
+input.largerCheckbox {
+    width: 300px;
+    height: 150px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #dddddd;
+}
+
+table {
+    border: 5px solid #dddddd;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
