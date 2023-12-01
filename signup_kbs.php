@@ -65,7 +65,7 @@
                 <input name="wachtwoord" type="password" required/>
             </label>
             <p class="forgot-pass">Forgot password?</p>
-            <button type="button" class="submit">Sign In</button>
+            <button type="button" class="submit button2">Sign In</button>
         </form>
     </div>
     <div class="sub-cont">
@@ -84,8 +84,8 @@
             </div>
         </div>
         <div class="form sign-up" method="post">
-            <form name="SignUp" action="signup_kbs.php?formname=form2">
-                <h2>Create your Account</h2>
+            <form name="signup" action="signup_kbs.php?formname=form2">
+                <h2 class="blue">Create your Account</h2>
                 <label>
                     <span>First Name</span>
                     <input name="voornaam" type="text" required/>
@@ -106,7 +106,7 @@
                     <span>Password</span>
                     <input name="wachtwoord2" type="password" required/>
                 </label>
-                <button type="button" class="submit">Sign Up</button>
+                <button type="button" class="submit button2">Sign Up</button>
             </form>
         </div>
     </div>
@@ -117,7 +117,8 @@
     });
 </script>
 <?php
-$connection = mysqli_connect("localhost","root"," ","nerdy_gadgets_start", "3306");
+error_reporting(0);
+$connection = mysqli_connect("localhost","root","","nerdy_gadgets_start", "3306");
 $voornaam= $_POST['voornaam'];
 $tussenvoegsel = $_POST['tussenvoegsel'];
 $achternaam = $_POST['achternaam'];
