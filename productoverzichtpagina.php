@@ -78,21 +78,52 @@
     $connection = mysqli_connect("localhost", "root", "", "nerdy_gadgets_start", "3306");
     $sql = "select image, name, price from product $a";
     $imagesql = "select image from product $a";
-    $result = mysqli_query($connection, $sql);
-    $imageresult = mysqli_query($connection, $imagesql);
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<tr>';
-            echo '<td>' . '<img src="img/producten/'.$row['image'].'.jpg" width="100" >' . '</td>';
-            echo '<td>' . $row['name'] . '</td>';
-            echo '<td>' . $row['price'] . '</td>';
-            echo '</tr>';
-
+    $min = $_POST['lprijs'];
+    $max = $_POST['hprijs'];
+    $merk = $_POST['merk'];
+    if(isset($_POST["verzend"])) {
+        if (!empty($min) && !empty($max) && empty($merk)) {
+            $sql = "select image, name, price from product where price between  $min and $max  order by price asc";
+        }  elseif (!empty($merk) && !empty($min) && !empty($max)) {
+            $sql = "select image, name, price from product where name like '%$merk%' AND price between $min and $max";
+        } elseif (!empty($merk)){
+            $sql = "select image, name, price from product where name like '%$merk%'";
+        } elseif (!empty($min)) {
+        $sql = "select image, name, price from product where price between $min and 100000 order by price asc";
+        } elseif (!empty($max)) {
+            $sql = "select image, name, price from product where price between 0 and $max order by price asc";
         }
 
-    }
 
+
+        $result = mysqli_query($connection, $sql);
+        $imageresult = mysqli_query($connection, $imagesql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<tr>';
+                echo '<td>' . '<img src="img/producten/' . $row['image'] . '.jpg" width="100" >' . '</td>';
+                echo '<td>' . $row['name'] . '</td>';
+                echo '<td>' . $row['price'] . '</td>';
+                echo '</tr>';
+
+            }
+        }
+    }
     ?>
+    <div>
+        <form action="" method="post">
+            <input type="text" name="lprijs" placeholder="min" value=""><br>
+            <input type="text" name="hprijs" placeholder="max" value=""><br>
+            <select name="merk"><br>
+                <option value=""></option>
+                <option value="pc">pc</option>
+                <option value="iphone">iphone</option>
+                <option value="samsung">samsung</option>
+                <option value="gaming">gaming</option>
+            </select>
+            <input type="submit" name="verzend">
+        </form>
+    </div>
 </table>
 <!-------------------------------------- footer NIET AANKOMEN -------------------------------------------- -->
 <link rel="stylesheet" href="CSS/footer.css">
