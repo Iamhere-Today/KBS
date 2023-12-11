@@ -126,7 +126,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr>';
                 echo '<td>' . '<img src="img/producten/' . $row['image'] . '.jpg" width="100" >' . '</td>';
-                echo '<td>' . $row['name'] . '</td>';
+                echo '<td>' . '<a href="Product_links/product.php"> '. $row['name'] . '</a>'. '</td>';
                 echo '<td>' . '€' . $row['price'] . '</td>';
                 echo '</tr>';
 
