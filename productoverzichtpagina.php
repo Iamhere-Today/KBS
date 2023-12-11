@@ -100,7 +100,7 @@
     error_reporting(0);
     $a = "order by category asc";
     $connection = mysqli_connect("localhost", "root", "", "nerdy_gadgets_start", "3306");
-    $sql = "select image, name, price from product $a";
+    $sql = "select id, image, name, price from product $a";
     $imagesql = "select image from product $a";
     $min = $_POST['lprijs'];
     $max = $_POST['hprijs'];
@@ -126,7 +126,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr>';
                 echo '<td>' . '<img src="img/producten/' . $row['image'] . '.jpg" width="100" >' . '</td>';
-                echo '<td>' . '<a href="Product_links/product.php"> '. $row['name'] . '</a>'. '</td>';
+                echo '<td>' . '<a href="Product_links/product.php?id=' . $row['id'] . '"> '. $row['name'] . '</a>'. '</td>';
                 echo '<td>' . '€' . $row['price'] . '</td>';
                 echo '</tr>';
 
