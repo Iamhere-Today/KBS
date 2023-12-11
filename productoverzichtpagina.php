@@ -107,15 +107,15 @@
     $merk = $_POST['merk'];
     if(isset($_POST["verzend"])) {
         if (!empty($min) && !empty($max) && empty($merk)) {
-            $sql = "select image, name, price from product where price between  $min and $max  order by price asc";
+            $sql = "select id, image, name, price from product where price between  $min and $max  order by price asc";
         }  elseif (!empty($merk) && !empty($min) && !empty($max)) {
-            $sql = "select image, name, price from product where name like '%$merk%' AND price between $min and $max";
+            $sql = "select id, image, name, price from product where name like '%$merk%' AND price between $min and $max";
         } elseif (!empty($merk)){
-            $sql = "select image, name, price from product where name like '%$merk%'";
+            $sql = "select id, image, name, price from product where name like '%$merk%'";
         } elseif (!empty($min)) {
-            $sql = "select image, name, price from product where price between $min and 100000 order by price asc";
+            $sql = "select id, image, name, price from product where price between $min and 100000 order by price asc";
         } elseif (!empty($max)) {
-            $sql = "select image, name, price from product where price between 0 and $max order by price asc";
+            $sql = "select id, image, name, price from product where price between 0 and $max order by price asc";
         }}
 
 

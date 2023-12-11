@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="icon" type="img/x-icon" href="img/Nerdy_Gadgets_zonder_tekst.ico"> <!-- icon in je tab -->
     <link rel="stylesheet" type="text/css" href="CSS/index.css"> <!-- koppelt de css aan de html code -->
     <link rel="stylesheet" type="text/css" href="CSS/signup.css"> <!-- koppelt de css aan de html code -->
 </head>
@@ -165,7 +166,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h4>links</h4>
                     <ul>
                         <li><a href="index.html">index</a></li>
-                        <li><a href="shopcart.html">shoppingcart</a></li>
+                        <li><a href="shopcart.php">shoppingcart</a></li>
                         <li><a href="contact.html">contact</a></li>
                         <li><a href="about.html">about</a></li>
                     </ul>
