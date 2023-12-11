@@ -60,9 +60,13 @@
 
 <br><br>
 <?php
+$id=  $_GET['id'];
+
 $connection = mysqli_connect("localhost","root", "", "nerdy_gadgets_start", "3306");
-$sql = "select name, description, price, image from product where id = 50";
-$result = mysqli_query($connection,$sql);
+$stmt = mysqli_prepare($connection, "select name, description, price, image from product where id = ?");
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($result)) {
     echo '<h1 class="product-title">' . $row["name"] . '</h1>';
