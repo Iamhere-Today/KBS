@@ -97,7 +97,7 @@
         <th>price</th>
     </tr>
     <?php
-    // error_reporting(0);
+    error_reporting(0);
     $a = "order by category asc";
     $connection = mysqli_connect("localhost", "root", "", "nerdy_gadgets_start", "3306");
     $sql = "select image, name, price from product $a";
@@ -116,7 +116,7 @@
             $sql = "select image, name, price from product where price between $min and 100000 order by price asc";
         } elseif (!empty($max)) {
             $sql = "select image, name, price from product where price between 0 and $max order by price asc";
-        }
+        }}
 
 
 
@@ -133,7 +133,7 @@
             }
         }
 
-    }
+
     ?>
 </table>
 
