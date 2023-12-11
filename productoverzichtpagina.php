@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- gekozen taal voor de website is Engels -->
-
 <head>
     <meta charset="UTF-8"> <!-- zorgt dat het alfabet geaccepteerd wordt -->
     <title>Nerdy Gadgets</title> <!-- tab titel -->
@@ -65,6 +64,31 @@
 </section_balk>
 <h1>Nerdy Gadget</h1>
 <h1 style="color: white; font-size: 30px ">Producten</h1>
+
+
+<section style=" border: 4px solid #dddddd ; border-radius: 10px;position: sticky ; top: 0; margin-right: 1200px;padding: 1px; background-color: #20242c; color: #ddd" >
+    <form action="" method="post">
+        Zoeken:<br>
+        <input name="merk" type="text" placeholder="..."><br>
+        Minprijs:<br>
+        <input type="text" name="lprijs" placeholder="min" value=""><br>
+        Maxprijs:<br>
+        <input type="text" name="hprijs" placeholder="max" value=""><br>
+        <!--<select name="merk"><br>
+            <option value=""></option>
+            <option value="pc">pc</option>
+            <option value="iphone">iphone</option>
+            <option value="samsung">samsung</option>
+            <option value="gaming">gaming</option>
+        </select>-->
+        <input type="submit" name="verzend"><br>
+
+    </form>
+
+</section>
+
+
+
 <br>
 <table class="center">
     <tr>
@@ -73,7 +97,7 @@
         <th>price</th>
     </tr>
     <?php
-    error_reporting(0);
+    // error_reporting(0);
     $a = "order by category asc";
     $connection = mysqli_connect("localhost", "root", "", "nerdy_gadgets_start", "3306");
     $sql = "select image, name, price from product $a";
@@ -89,7 +113,7 @@
         } elseif (!empty($merk)){
             $sql = "select image, name, price from product where name like '%$merk%'";
         } elseif (!empty($min)) {
-        $sql = "select image, name, price from product where price between $min and 100000 order by price asc";
+            $sql = "select image, name, price from product where price between $min and 100000 order by price asc";
         } elseif (!empty($max)) {
             $sql = "select image, name, price from product where price between 0 and $max order by price asc";
         }
@@ -103,32 +127,20 @@
                 echo '<tr>';
                 echo '<td>' . '<img src="img/producten/' . $row['image'] . '.jpg" width="100" >' . '</td>';
                 echo '<td>' . $row['name'] . '</td>';
-                echo '<td>' . $row['price'] . '</td>';
+                echo '<td>' . '€' . $row['price'] . '</td>';
                 echo '</tr>';
 
             }
         }
+
     }
     ?>
-    <div>
-        <form action="" method="post">
-            <input type="text" name="lprijs" placeholder="min" value=""><br>
-            <input type="text" name="hprijs" placeholder="max" value=""><br>
-            <select name="merk"><br>
-                <option value=""></option>
-                <option value="pc">pc</option>
-                <option value="iphone">iphone</option>
-                <option value="samsung">samsung</option>
-                <option value="gaming">gaming</option>
-            </select>
-            <input type="submit" name="verzend">
-        </form>
-    </div>
 </table>
+
+
 <!-------------------------------------- footer NIET AANKOMEN -------------------------------------------- -->
 <link rel="stylesheet" href="CSS/footer.css">
 <footer>
-    AAAAAAAAAAAAAAAAAAAAAAAAAA
 </footer>
 </body>
 <!-- ----------------------------------------------- footer NIKS ONDER PLAATSEN -------------------------------------------- -->
@@ -177,3 +189,6 @@
 </section_footer>
 -->
 </html>
+
+
+

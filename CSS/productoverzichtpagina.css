@@ -1,40 +1,6 @@
-.btn:hover{
-    cursor: pointer;
-    background-color: #1d4b8f;
-    color: white;
-}
 
-.container1 {
-    display: flex;
-    padding-left: 300px;
-    border-top: 3px solid #111111;
-}
-.img{
-    width: 300px;
-    height: 240px;
-    color: white;
 
-}
-.item-2{
-    padding: 20px 80px;
-    flex-grow: 1;
-    color: white;
-}
-.item-3{
-    color: #ffffff;
-    font-size: larger;
-}
-.item-3 .btn{
-    color: black;
-    text-align: right;
-    padding: 7px;
-    border: 1px solid;
-    border-radius: 20px;
-}
 
-html, body {
-    height: 50%;
-}
 
 input.largerCheckbox {
     width: 300px;
@@ -46,15 +12,21 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #ddd;
     color: #dddddd;
+    margin-top: 100px;
 }
 
 table {
-    border: 5px solid #dddddd;
+    border: 3.5px solid #dddddd;
     border-radius: 10px;
     margin-top: auto;
 }
 
 .center {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 180px;
+    margin-right: 1px;
 }
+
+
+
+
+
