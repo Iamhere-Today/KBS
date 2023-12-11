@@ -66,14 +66,14 @@
 <h1 style="color: white; font-size: 30px ">Producten</h1>
 
 
-<section style=" border: 4px solid #dddddd ; border-radius: 10px;position: sticky ; top: 0; margin-right: 1200px;padding: 1px; background-color: #20242c; color: #ddd" >
+<section style=" border: 4px solid #dddddd ; border-radius: 10px;position: sticky; top: 0; margin-right: 87%; padding: 1px; background-color: #20242c; color: #ddd" >
     <form action="" method="post">
         Zoeken:<br>
-        <input name="merk" type="text" placeholder="..."><br>
+        <input name="merk" style="width: 95%; padding: 0.1%" type="text" placeholder="..."><br>
         Minprijs:<br>
-        <input type="text" name="lprijs" placeholder="min" value=""><br>
+        <input type="text" style="width: 95%; padding: 0.1%" name="lprijs" placeholder="min" value=""><br>
         Maxprijs:<br>
-        <input type="text" name="hprijs" placeholder="max" value=""><br>
+        <input type="text" style="width: 95%; padding: 0.1%" name="hprijs" placeholder="max" value=""><br>
         <!--<select name="merk"><br>
             <option value=""></option>
             <option value="pc">pc</option>
