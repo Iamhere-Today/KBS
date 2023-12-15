@@ -174,9 +174,9 @@ if(mysqli_num_rows($result) > 0) {
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>mooi</h4>
+                    <h4>producten</h4>
                     <ul>
-                        <li><a href="#">wat kan hier</a></li>
+                        <li><a href="productoverzichtpagina.php">assortiment</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
