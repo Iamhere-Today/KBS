@@ -70,17 +70,17 @@
     <form action="" method="post">
         Zoeken:<br>
         <input name="merk" style="width: 95%; padding: 0.1%" type="text" placeholder="..."><br>
-        Minprijs:<br>
-        <input type="text" style="width: 95%; padding: 0.1%" name="lprijs" placeholder="min" value=""><br>
-        Maxprijs:<br>
-        <input type="text" style="width: 95%; padding: 0.1%" name="hprijs" placeholder="max" value=""><br>
-        <!--<select name="merk"><br>
-            <option value=""></option>
-            <option value="pc">pc</option>
-            <option value="iphone">iphone</option>
-            <option value="samsung">samsung</option>
-            <option value="gaming">gaming</option>
-        </select>-->
+        prijs<br>
+        €
+        <input type="number" style="width: 30%; padding: 1%" name="lprijs" placeholder="8" value=""> tot
+        <input type="number" style="width: 30%; padding: 1%" name="hprijs" placeholder="2000" value=""><br>
+        <input type="checkbox" style="width: 10%" name="componenten" value="componenten">Componenten<br>
+        <input type="checkbox" style="width: 10%" name="desktops" value="desktops">Desktops<br>
+        <input type="checkbox" style="width: 10%" name="laptops" value="laptops">Laptops<br>
+        <input type="checkbox" style="width: 10%" name="opslag" value="opslag">Opslag<br>
+        <input type="checkbox" style="width: 10%" name="phones" value="phones">Phones<br>
+        <input type="checkbox" style="width: 10%" name="routers" value="routers">routers<br>
+        <input type="checkbox" style="width: 10%" name="populair" value="populair">populair<br>
         <input type="submit" name="verzend"><br>
 
     </form>
@@ -99,24 +99,47 @@
     <?php
     error_reporting(0);
     $a = "order by category asc";
+    $b = "select id, image, name, price from product";
     $connection = mysqli_connect("localhost", "root", "", "nerdy_gadgets_start", "3306");
     $sql = "select id, image, name, price from product $a";
     $imagesql = "select image from product $a";
     $min = $_POST['lprijs'];
     $max = $_POST['hprijs'];
     $merk = $_POST['merk'];
+    $componenten = $_POST['componenten'];
+    $desktop = $_POST['desktops'];
+    $laptops = $_POST['laptops'];
+    $opslag = $_POST['opslag'];
+    $phones = $_POST['phones'];
+    $routers = $_POST['routers'];
+    $populair = $_POST['populair'];
     if(isset($_POST["verzend"])) {
         if (!empty($min) && !empty($max) && empty($merk)) {
-            $sql = "select id, image, name, price from product where price between  $min and $max  order by price asc";
-        }  elseif (!empty($merk) && !empty($min) && !empty($max)) {
-            $sql = "select id, image, name, price from product where name like '%$merk%' AND price between $min and $max";
+            $sql = "$b where price between  $min and $max  order by price asc";
+        } elseif (!empty($merk) && !empty($min) && !empty($max)) {
+            $sql = "$b where name like '%$merk%' AND price between $min and $max";
         } elseif (!empty($merk)){
-            $sql = "select id, image, name, price from product where name like '%$merk%'";
+            $sql = "$b where name like '%$merk%'";
         } elseif (!empty($min)) {
-            $sql = "select id, image, name, price from product where price between $min and 100000 order by price asc";
+            $sql = "$b where price between $min and 100000 order by price asc";
         } elseif (!empty($max)) {
-            $sql = "select id, image, name, price from product where price between 0 and $max order by price asc";
-        }}
+            $sql = "$b where price between 0 and $max order by price asc";
+        } if ($componenten){
+            $sql = "$b where category = 'componenten'";
+        } if ($desktop){
+            $sql = "$b where category = 'desktops'  ";
+        } if ($laptops){
+            $sql = "$b where category = 'laptops'  ";
+        } if ($opslag){
+            $sql = "$b where category = 'opslag'  ";
+        } if ($phones){
+            $sql = "$b where category = 'phones'  ";
+        } if ($routers){
+            $sql = "$b where category = 'routers'  ";
+        } if ($populair){
+            $sql = "select distinct id, image, name, price, count(product_id), product_id from product p join order_item on product_id = id group by product_id having count(product_id) > 30 order by price asc;";
+        }
+    }
 
 
     $result = mysqli_query($connection, $sql);
